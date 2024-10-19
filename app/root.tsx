@@ -7,6 +7,7 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 import "./lib/theme/styles.scss"
+import { Main } from "./lib/components/main";
 
 export const links: LinksFunction = () => [
   {
@@ -35,7 +36,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Main>
+          {children}
+        </Main>
         <ScrollRestoration />
         <Scripts />
       </body>

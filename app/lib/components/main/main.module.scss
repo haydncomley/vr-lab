@@ -1,0 +1,11 @@
+@use "easy-theme" as theme;
+
+.main {
+    color: theme.Color('primary');
+}
+
+.enter {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}

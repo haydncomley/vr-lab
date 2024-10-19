@@ -4,4 +4,11 @@ html, body {
     background: theme.Color('background');
     color: theme.Contrast('background');
     font: theme.Var("text-normal");
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
 }

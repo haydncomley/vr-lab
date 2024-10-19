@@ -1,5 +1,9 @@
+import * as THREE from 'three'
+import { useThree } from "@react-three/fiber";
 import type { MetaFunction } from "@remix-run/node";
-import { Test } from "~/lib/components/test";
+import { useEffect } from "react";
+import { Main } from "~/lib/components/main";
+import { MoveableBox } from "~/lib/components/moveableBox";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,10 +13,17 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const { scene } = useThree();
+
+    useEffect(() => {
+        scene.background = new THREE.Color(0xf7feff);
+    }, [])
+
   return (
-    <main>
-      <h1>Hello World.</h1>
-      <Test foo="World"></Test>
-    </main>
+    <>
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <MoveableBox></MoveableBox>
+    </>
   );
 }
