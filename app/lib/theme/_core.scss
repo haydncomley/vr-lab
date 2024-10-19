@@ -1,0 +1,7 @@
+@use "easy-theme" as theme;
+
+html, body {
+    background: theme.Color('background');
+    color: theme.Contrast('background');
+    font: theme.Var("text-normal");
+}

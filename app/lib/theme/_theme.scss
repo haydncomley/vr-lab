@@ -1,0 +1,26 @@
+@use "easy-theme" as theme;
+
+$light-theme: (
+    'background': (#ffffff, #121212),
+    'primary': (#1bb3ff, #FFFFFF),
+);
+
+$dark-theme: (
+    'background': (#121212, #FFFFFF),
+);
+
+$variables: (
+    // Spacing
+    'gap': .5rem,
+    'space': 1.25rem,
+    // Radii
+    'radius': .25rem,
+    // Fonts
+    'text-normal': "400 1rem/1.5 Roboto, sans-serif",
+);
+
+@include theme.UseTheme((
+    light: $light-theme,
+    dark: $dark-theme,
+    variables: $variables,
+));
